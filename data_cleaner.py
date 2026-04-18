@@ -6,7 +6,7 @@ def clean_data(file_name):
     with open(file_name, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            if row:
+            if any(cell.strip() for cell in row):
                 cleaned.append(row)
     
     return cleaned
